@@ -1,0 +1,128 @@
+INSTALLING GIT
+
+1. Install Git
+
+Go to this website for the installation command for your specific linux distribution:
+
+https://git-scm.com/download/linux
+
+If you don't know what your linux distribution is, you can check it with the following command:
+
+cat /etc/*-release
+
+If you do not see your linux distribution listed on the website or if you have issues with another installation command,
+try and use this command instead:
+
+apt-get install git
+
+2. Tell Git your name so your commits will be properly labeled.
+
+git config --global user.name "YOUR NAME"
+
+3. Tell Git the email address that will be associated with your Git commits. The email you specify should be the same one found in your email settings.
+
+git config --global user.email "YOUR EMAIL ADDRESS"
+
+4. Make the directory of where you want to store the git repository on your computer
+
+mkdir cs3505-Repo (Make sure you create this folder where you want it, you can also use any name for the folder)
+
+5. Change the current directory to the new folder you created
+
+cd cs3505-Repo
+
+6. Initialize that folder with Git
+
+git init
+
+7. Add the connection to the repository
+
+git remote add origin https://github.com/BraedenDiaz/CS3505-Team-Repo.git
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+PULLING
+
+1. Make sure you have done all of the steps of installing Git first.
+
+2. To pull code from GitHub, simply use this command:
+
+git pull origin master
+
+Note: You will be asked for your username and password for GitHub to pull from the server.
+
+This is all you need to do to pull since we only have one branch to pull from. However, if you want to simply type "git pull" instead of the longer command, type in this command:
+
+git branch --set-upstream-to=origin/master master
+
+After running this command, from now on you will only need to use "git pull" to pull from the repository and not the longer command.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+COMMITTING AND PUSHING
+
+After you are done writing code for the day you will always need to commit and push to the git repository.
+
+1. First save all of your code and exit out of all of the code editors.
+
+2. Now you have to stage the changes made and get them ready to commit (You must stage before committing!)
+
+git add <file> <file2> (for individual files)
+
+or
+
+git add . (for all files)
+
+Note: you can use the command "git status" to see which files are modified, staged, or unstaged before you commit them.
+You can also use the command "git reset HEAD <file>" to unstage a file.
+
+3. After staging the modified files, you can now commit them
+
+git commit -m "Enter Commit Message Here"
+
+The '-m' parameter represents that you want to enter a commit message which is always good to do.
+
+Recall that committing only saves your code on the local repository on your computer. So now you need to push your code to the git repository.
+
+4. Push your code to the git repository.
+
+git push origin master
+
+Note: You will be asked for your username and password for GitHub to push to the server.
+
+Again if you want to simply enter "git push" each time instead of the longer command, type this command:
+
+git push --set-upstream origin master
+
+You can now simply use the command "git push" to push to the server from now on.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+These are all the common commands you'll need to use when working on your Git projects.
+
+RECAP:
+
+Each time you decide to work on your code, you'll need to first PULL the code from the server. (This is important! Always PULL before working on your code so that you will be working on the latest version of the code and you won't have to deal with merge conflicts!)
+
+Then you will work on your code.
+
+After you are finished working on your code, you will then COMMIT and then PUSH to the server.
+
+You will repeat this process everytime you decide to continue to work on your code.
+
+For additional help you can use the following commands:
+
+git --help
+
+or
+
+git --help <command> 
+
+where <command> is the name of the command you need help with i.e. git --help pull for example
+
+If you still need more help, you can refer to GitHub's documentation page here:
+
+https://git-scm.com/docs/
+
+or you can contact Braeden Diaz.
+
